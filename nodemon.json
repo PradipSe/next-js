@@ -1,0 +1,13 @@
+{
+	"ignore": [
+		"pages",
+		"README",
+		"components",
+		"reducers",
+		"enchancers",
+		"middlewares",
+		"helpers",
+		"themes",
+		"actions"
+	]
+}

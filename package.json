@@ -1,17 +1,41 @@
 {
-  "name": "custom-server-koa",
+  "name": "buzz-web-v2",
   "version": "1.0.0",
+  "description": "Buzz web v2 for Content",
+  "author": {
+    "name": "Bookmyshow"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
   "scripts": {
-    "dev": "node server.js",
+    "dev": "cross-env NODE_ENV=development TIER=dev nodemon server",
     "build": "next build",
-    "start": "cross-env NODE_ENV=production node server.js"
+    "start": "cross-env TIER=production NODE_ENV=production PORT=3000 node server",
+    "analyze": "cross-env ANALYZE=true next build",
+    "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
+    "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"
   },
   "dependencies": {
+    "@koa/cors": "^3.1.0",
+    "@koa/router": "^8.0.7",
     "cross-env": "^5.2.0",
     "koa": "^2.0.1",
-    "@koa/router": "^8.0.7",
     "next": "latest",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "next-redux-wrapper": "^6.0.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^5.1.1"
+  },
+  "devDependencies": {
+    "@next/bundle-analyzer": "^9.4.4",
+    "babel-plugin-styled-components": "^1.10.7",
+    "brotli-webpack-plugin": "^1.1.0",
+    "compression-webpack-plugin": "^4.0.0",
+    "nodemon": "^2.0.4",
+    "redux-devtools-extension": "^2.13.8"
   }
 }
